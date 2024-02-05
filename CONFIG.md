@@ -16,3 +16,13 @@ Par défaut le rapport de test s'ouvre automatiquement sur `http://localhost:932
 `npx playwright test --trace on`
 Cela peut permettre de mieux comprendre ce qu'il se passe, en rejouant action par action le scénario et en inspectant la console, le réseau, etc...
 
+
+## Utilisation point d'arrêt et génération de code Playwright
+
+- Créer un nouveau fichier `odyssey-login.spec.ts`.
+
+- `npx playwright test tests/odyssey-login.spec.ts --headed`
+L'option --headed permet de lancer le navigateur de manière visible et ainsi d'avoir directement un aperçu visuel de l'exécution du test.
+On peut régler ça en mettant un point d'arrêt avec page.pause().
+
+- 
