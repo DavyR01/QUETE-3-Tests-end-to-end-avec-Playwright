@@ -1,4 +1,4 @@
-import { defineConfig, devices } from '@playwright/test';
+import { PlaywrightTestConfig, defineConfig, devices } from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -75,3 +75,28 @@ export default defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
+
+export const config: PlaywrightTestConfig = {
+  testDir: "./tests",
+  timeout: 30 * 1000,
+  expect: {
+    timeout: 10000,
+  },
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  reporter: "html",
+  use: {
+    actionTimeout: 0,
+    trace: "on-first-retry",
+  },
+  projects: [
+    {
+      name: "Chrome mobile",
+      use: {
+        ...devices["Pixel 5"],
+      },
+    },
+  ],
+};
