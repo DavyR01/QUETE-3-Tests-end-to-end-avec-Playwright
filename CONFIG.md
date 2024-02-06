@@ -25,4 +25,14 @@ Cela peut permettre de mieux comprendre ce qu'il se passe, en rejouant action pa
 L'option --headed permet de lancer le navigateur de manière visible et ainsi d'avoir directement un aperçu visuel de l'exécution du test.
 On peut régler ça en mettant un point d'arrêt avec page.pause().
 
-- 
+
+## Challenge Calculator check out opération
+
+- Pour ne tester que le fichier de test destiné à la calculatrice : 
+`npx playwright test tests/calculator.spec.ts`
+
+- Afin d'ouvrir les navigateurs lors du lancement de la commande 
+ `npx playwright test tests/calculator.spec.ts`, il faut rajouter l'option --headed dans la commande : 
+ `npx playwright test tests/calculator.spec.ts --headed`
+
+- Pour mettre en pause l'ouverture des navigateurs et avoir la possibilité d'enregistrer les interaction en générant des bouts de code, rajouter `await page.pause()` dans le fichier de test.
