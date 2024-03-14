@@ -5,6 +5,9 @@
 - Pour installer le projet :
 `npm init playwright@latest`
 
+- Pour installer les dépendances :
+`npx playwright install-deps`
+
 - Pour exécuter le test : 
 `npx playwright test`
 Par défaut le rapport de test s'ouvre automatiquement sur `http://localhost:9323/` lorsqu'au moins un test échoue.
@@ -31,8 +34,7 @@ On peut régler ça en mettant un point d'arrêt avec page.pause().
 - Pour ne tester que le fichier de test destiné à la calculatrice : 
 `npx playwright test tests/calculator.spec.ts`
 
-- Afin d'ouvrir les navigateurs lors du lancement de la commande 
- `npx playwright test tests/calculator.spec.ts`, il faut rajouter l'option --headed dans la commande : 
+- Afin d'ouvrir les navigateurs lors du lancement de la commande du dessus, il faut rajouter l'option --headed dans la commande : 
  `npx playwright test tests/calculator.spec.ts --headed`
 
 - Pour mettre en pause l'ouverture des navigateurs et avoir la possibilité d'enregistrer les interaction en générant des bouts de code, rajouter `await page.pause()` dans le fichier de test.
